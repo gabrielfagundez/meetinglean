@@ -5,4 +5,6 @@
  *= require 'font-awesome/css/font-awesome'
  *= require 'common/bootstrap_overrides'
  *
+ *= require 'agency/agency'
+ *
  */
