@@ -4,6 +4,8 @@ Meetinglean::Application.routes.draw do
 
   namespace :app do
     root to: 'home#index'
+
+    resources :meetings, only: [:index, :show]
   end
 
 end

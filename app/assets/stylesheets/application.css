@@ -8,5 +8,6 @@
  *= require 'agency/agency'
  *
  *= require 'app/shared'
+ *= require 'app/meetings'
  *
  */
