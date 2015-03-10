@@ -2,26 +2,12 @@
   = render partial: 'app/shared/navigation'
   #meetings
     .meeting-header
-      %h1 My Meetings
+      %h1 Daily Meeting
 
     .meeting-components
       .container-fluid
         .row
           .col-lg-6
-            .meeting-section
-              .meeting-section-title Agenda
-              .meeting-items
-                .item Item A
-                .item Item B
-                .item Item C
-                .add-item.item
-                  Add new item..
+            %meeting-agenda{ config: '{}' }
           .col-lg-6
-            .meeting-section
-              .meeting-section-title.private Private Agenda
-              .meeting-items
-                .item Item A
-                .item Item B
-                .item Item C
-                .add-item.item
-                  Add new item..
+            %meeting-agenda{ config: '{}' }

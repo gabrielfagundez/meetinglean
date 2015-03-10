@@ -1,0 +1,10 @@
+app.factory('RouteHelper', [function() {
+
+  var service = {
+    getMeetingAgendaUrl: function() {
+      return <%= "'#{ asset_path('angular/templates/components/meeting_agenda_content.html')}'" %>;
+    }
+  };
+
+  return service;
+}]);
