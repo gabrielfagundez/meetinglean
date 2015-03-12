@@ -1,11 +1,24 @@
-#nav-header
-  .menu-content
-    .main-link.active
-      %i.fa.fa-pagelines
-      My Clients
-    .main-link
-      %i.fa.fa-paperclip
-      My Projects
-    .main-link
-      %i.fa.fa-adjust
-      My Meetings
+%aside.main-sidebar
+  %section.sidebar
+    .user-panel
+      .pull-left.image
+        %img.img-circle{:alt => "User Image", :src => "dist/img/user2-160x160.jpg"}/
+      .pull-left.info
+        %p Gabriel Fagúndez de los Reyes
+
+    %ul.sidebar-menu
+      %li.header MAIN NAVIGATION
+      %li
+        %a{:href => "pages/calendar.html"}
+          %i.fa.fa-calendar
+          %span My Meetings
+
+      %li
+        %a{:href => "pages/calendar.html"}
+          %i.fa.fa-calendar
+          %span My Projects
+
+      %li
+        %a{:href => "pages/calendar.html"}
+          %i.fa.fa-calendar
+          %span My Clients

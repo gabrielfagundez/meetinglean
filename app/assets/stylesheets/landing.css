@@ -5,10 +5,9 @@
  *= require 'font-awesome/css/font-awesome'
  *= require 'common/bootstrap_overrides'
  *
+ *= require 'agency/agency'
+ *
  *= require 'app/shared'
  *= require 'app/meetings'
- *
- *= require 'adminLTE/skins/_all-skins'
- *= require 'adminLTE/AdminLTE'
  *
  */
