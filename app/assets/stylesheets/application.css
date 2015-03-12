@@ -10,4 +10,7 @@
  *= require 'app/shared'
  *= require 'app/meetings'
  *
+ *= require 'adminLTE/AdminLTE'
+ *= require 'adminLTE/skins/skin-yellow'
+ *
  */
