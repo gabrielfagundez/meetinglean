@@ -1,6 +1,20 @@
-#app
+.wrapper
+  %header.main-header
+    %a.logo{:href => "index2.html"}
+      MeetLean
+    %nav.navbar.navbar-static-top{:role => "navigation"}
+      %a.sidebar-toggle{"data-toggle" => "offcanvas", :href => "#", :role => "button"}
+        %span.sr-only Toggle navigation
+
   = render partial: 'app/shared/navigation'
-  #meetings
-    .row
-      .meeting-header
-        %h1 My Meetings
+
+  .content-wrapper
+    %section.content-header
+      %h1
+        Meetings
+        %small Index
+
+    %section.content
+      .row
+        .col-lg-12
+          %meeting-timeline

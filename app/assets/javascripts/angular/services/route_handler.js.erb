@@ -1,8 +1,11 @@
-app.factory('RouteHelper', [function() {
+app.factory('RouteHandler', [function() {
 
   var service = {
     getMeetingAgendaUrl: function() {
-      return <%= "'#{ asset_path('angular/templates/components/meeting_agenda_content.html')}'" %>;
+      return <%= "'#{ asset_path('templates/components/meeting_agenda_content.html')}'" %>;
+    },
+    getMeetingTimelineUrl: function() {
+      return <%= "'#{ asset_path('templates/components/meeting_timeline.html')}'" %>;
     }
   };
 

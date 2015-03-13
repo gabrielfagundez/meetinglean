@@ -2,14 +2,14 @@
   %section.sidebar
     .user-panel
       .pull-left.image
-        %img.img-circle{:alt => "User Image", :src => "dist/img/user2-160x160.jpg"}/
+        = image_tag 'landing/team/profile.png', { class: 'img-circle' }
       .pull-left.info
-        %p Gabriel Fagúndez de los Reyes
+        %p Gabriel Fagúndez
 
     %ul.sidebar-menu
       %li.header MAIN NAVIGATION
       %li
-        %a{:href => "pages/calendar.html"}
+        = link_to app_meetings_path do
           %i.fa.fa-calendar
           %span My Meetings
 
