@@ -1,14 +1,8 @@
 .wrapper
-  %header.main-header
-    %a.logo{:href => "index2.html"}
-      MeetLean
-    %nav.navbar.navbar-static-top{:role => "navigation"}
-      %a.sidebar-toggle{"data-toggle" => "offcanvas", :href => "#", :role => "button"}
-        %span.sr-only Toggle navigation
-
+  = render partial: 'app/shared/header'
   = render partial: 'app/shared/navigation'
 
-  .content-wrapper
+  .content-wrapper{ 'ng-controller' => 'MeetingsController' }
     %section.content-header
       %h1
         Meetings
@@ -17,4 +11,20 @@
     %section.content
       .row
         .col-lg-12
-          %meeting-timeline
+          %ul.timeline
+            %li{ 'ng-repeat' => 'meeting in meetings' }
+              %i.fa.fa-envelope
+              .timeline-item
+                %span.time
+                  %i.fa.fa-clock-o
+                    {{ meeting.start_time }}
+                %h3.timeline-header
+                  {{ meeting.name }}
+                .timeline-body
+                  {{ meeting.description }}
+                .timeline-footer
+                  %a.btn.btn-primary.btn-xs{ 'ng-href' => '{{ meetingPath(meeting.id) }}' }
+                    See this meeting
+
+            %li
+              %i.fa.fa-clock-o.bg-gray
