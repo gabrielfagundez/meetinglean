@@ -1,0 +1,8 @@
+app.config(
+    ['$routeProvider', function($routeProvider) {
+      $routeProvider.
+          when('/app',              { templateUrl: '<%= asset_path('angular/templates/app/index.html') %>'}).
+          when('/app/meetings',     { templateUrl: '<%= asset_path('angular/templates/app/meetings/index.html') %>'}).
+          when('/app/meetings/:id', { templateUrl: '<%= asset_path('angular/templates/app/meetings/show.html') %>'})
+    }]
+);
