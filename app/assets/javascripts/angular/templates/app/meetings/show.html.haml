@@ -1,3 +1,15 @@
 %section.content
   .row
-    .col-lg-12
+    .col-lg-6
+      .box.box-default
+        .box-header.with-border
+          %h3.box-title Agenda
+        .box-body{ 'ng-repeat' => 'agenda in currentMeeting.agenda' }
+          {{ agenda.description }}
+
+
+    .col-lg-6
+      .box.box-default
+        .box-header.with-border
+          %h3.box-title Private Notes
+        .box-body

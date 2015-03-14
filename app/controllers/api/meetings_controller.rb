@@ -5,7 +5,12 @@ class Api::MeetingsController < ApplicationController
   end
 
   def show
-    render json: Meeting.find(params[:id])
+    meeting = Meeting.includes(:meeting_agenda).find(params[:id])
+    render json: {
+      name: meeting.name,
+      description: meeting.description,
+      agenda: meeting.meeting_agenda
+    }
   end
 
 end
