@@ -44,6 +44,10 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
     }
   };
 
+  $scope.startMeetingPath = function(currentMeeting) {
+    return '/app/meetings/' + currentMeeting.id + '/start'
+  };
+
   function handleItemBlur(itemList, itemId, text) {
     var newItemList = [];
 

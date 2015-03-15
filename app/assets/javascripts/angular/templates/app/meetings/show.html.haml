@@ -1,7 +1,7 @@
 #meetings
   %section.content
     .row
-      .col-lg-6
+      .col-lg-8
         .box.box-default.agenda
           .box-header.with-border
             %h3.box-title Agenda
@@ -15,7 +15,7 @@
 
 
 
-      .col-lg-6
+      .col-lg-4
         .box.box-default.private_notes
           .box-header.with-border
             %h3.box-title Private Notes
@@ -26,3 +26,11 @@
             .add-item{ 'ng-click' => 'addPrivateNote()' }
               %i.fa.fa-plus
               Add private note
+
+      .col-lg-12
+        .separator
+
+        .options
+          %a.btn.btn-app{ 'ng-href' => '{{ startMeetingPath(currentMeeting) }}' }
+            %i.fa.fa-play
+            Start Meeting

@@ -32,4 +32,16 @@
       i { padding-right: 10px }
     }
   }
+  .separator {
+    margin: 25px 0;
+    border-bottom: 1px solid #d2d6de;
+  }
+  .options {
+    width: 100%;
+    text-align: center;
+    .btn-app {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
 }
