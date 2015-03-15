@@ -1,4 +1,4 @@
-class MeetingAgenda < ActiveRecord::Base
+class MeetingDecision < ActiveRecord::Base
 
   belongs_to :meeting
 
