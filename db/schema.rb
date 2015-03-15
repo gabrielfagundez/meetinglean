@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150315183050) do
     t.string "meeting_id"
   end
 
-  create_table "meeting_decision", force: true do |t|
+  create_table "meeting_decisions", force: true do |t|
     t.string "description"
     t.string "meeting_id"
   end

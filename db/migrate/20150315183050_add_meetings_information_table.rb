@@ -1,6 +1,6 @@
 class AddMeetingsInformationTable < ActiveRecord::Migration
   def change
-    create_table :meeting_decision do |t|
+    create_table :meeting_decisions do |t|
       t.string :description
       t.string :meeting_id
     end
