@@ -1,7 +1,7 @@
 #meetings
   %section.content
     .row
-      .col-lg-12
+      .col-lg-8
         .box.box-default.summary
           .box-header.with-border
             %h3.box-title Meeting Summary
@@ -12,3 +12,15 @@
             .add-item{ 'ng-click' => 'addSummary()' }
               %i.fa.fa-plus
               Add new summary line
+
+      .col-lg-4
+        .box.box-warning.agenda
+          .box-header.with-border
+            %h3.box-title Agenda
+          .box-body
+            .item-list{ 'ng-repeat' => 'agenda in currentMeeting.agenda' }
+              .item{ 'ng-class' => 'itemClass(agenda, "agenda")' }
+                {{ agenda.description }}
+
+      .col-lg-12
+        .separator
