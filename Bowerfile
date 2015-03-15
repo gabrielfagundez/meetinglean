@@ -7,6 +7,7 @@ asset 'angular-route', '1.3.9'
 asset 'angular-resource', '1.3.9'
 asset 'bootstrap', '3.3.1'
 asset 'ionicons', '1.5.2'
+asset 'underscore'
 asset 'font-awesome', '4.2.0'
 
 # Tests

@@ -1,4 +1,35 @@
 #meetings {
-  .meeting-header {
+  .box {
+    .item-list {
+      .item {
+        color: #555555;
+        line-height: 20px;
+        word-wrap: break-word;
+        margin: 6px 16px;
+        padding: 4px 4px;
+        &:hover {
+          color: #333333;
+          cursor: text;
+        }
+        &:focus {
+          outline: none
+        }
+        &.done {
+          text-decoration: line-through;
+          color: #999999;
+        }
+      }
+    }
+    .add-item {
+      color: #dcdcdc;
+      line-height: 20px;
+      word-wrap: break-word;
+      padding: 10px 20px;
+      &:hover {
+        color: #c2c2c2;
+        cursor: pointer;
+      }
+      i { padding-right: 10px }
+    }
   }
 }

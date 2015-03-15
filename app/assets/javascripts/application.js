@@ -6,6 +6,7 @@
 //= require angular-route/angular-route
 //= require angular-resource/angular-resource
 //= require bootstrap/dist/js/bootstrap
+//= require underscore/underscore
 
 // Landing
 //= require agency/agency
