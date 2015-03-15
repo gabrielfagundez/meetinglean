@@ -43,6 +43,37 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
     }, delayTime)
   };
 
+  $scope.addMeetingDecision = function() {
+    $scope.currentMeeting.meeting_decisions.push({
+      description: '',
+      meeting_id: 1
+    });
+    $timeout(function() {
+      $('.meeting_decisions .item-list .item').last().focus()
+    }, delayTime)
+  };
+
+  $scope.addMeetingActionItem = function() {
+    $scope.currentMeeting.meeting_action_items.push({
+      description: '',
+      meeting_id: 1
+    });
+    $timeout(function() {
+      $('.meeting_action_items .item-list .item').last().focus()
+    }, delayTime)
+  };
+
+  $scope.addMeetingOpenIssue = function() {
+    $scope.currentMeeting.meeting_open_issues.push({
+      description: '',
+      meeting_id: 1
+    });
+    $timeout(function() {
+      $('.meeting_open_issues .item-list .item').last().focus()
+    }, delayTime)
+  };
+
+
   $scope.blur = function(event) {
     var element = $(event.target);
     var itemId = element.data().id;
@@ -51,6 +82,12 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
       $scope.currentMeeting.agenda = handleItemBlur($scope.currentMeeting.agenda, itemId, element.text().trim());
     } else if(element.hasClass('summary')) {
       $scope.currentMeeting.summary = handleItemBlur($scope.currentMeeting.summary, itemId, element.text().trim());
+    } else if(element.hasClass('meeting_decisions')) {
+      $scope.currentMeeting.meeting_decisions = handleItemBlur($scope.currentMeeting.meeting_decisions, itemId, element.text().trim());
+    } else if(element.hasClass('meeting_action_items')) {
+      $scope.currentMeeting.meeting_action_items = handleItemBlur($scope.currentMeeting.meeting_action_items, itemId, element.text().trim());
+    } else if(element.hasClass('meeting_open_issues')) {
+      $scope.currentMeeting.meeting_open_issues = handleItemBlur($scope.currentMeeting.meeting_open_issues, itemId, element.text().trim());
     } else {
       $scope.currentMeeting.private_notes = handleItemBlur($scope.currentMeeting.private_notes, itemId, element.text().trim());
     }

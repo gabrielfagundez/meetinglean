@@ -22,5 +22,41 @@
               .item{ 'ng-class' => 'itemClass(agenda, "agenda")' }
                 {{ agenda.description }}
 
+    .row
       .col-lg-12
         .separator
+      .col-lg-4
+        .box.box-default.meeting_decisions
+          .box-header.with-border
+            %h3.box-title Decisions
+          .box-body
+            .item-list{ 'ng-repeat' => 'item in currentMeeting.meeting_decisions' }
+              .item{ 'ng-class' => 'itemClass(item, "meeting_decisions")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ item.id }}' }
+                {{ item.description }}
+            .add-item{ 'ng-click' => 'addMeetingDecision()' }
+              %i.fa.fa-plus
+              Add new decision
+
+      .col-lg-4
+        .box.box-default.meeting_action_items
+          .box-header.with-border
+            %h3.box-title Action Items
+          .box-body
+            .item-list{ 'ng-repeat' => 'item in currentMeeting.meeting_action_items' }
+              .item{ 'ng-class' => 'itemClass(item, "meeting_action_items")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ item.id }}' }
+                {{ item.description }}
+            .add-item{ 'ng-click' => 'addMeetingActionItem()' }
+              %i.fa.fa-plus
+              Add new action item
+
+      .col-lg-4
+        .box.box-default.meeting_open_issues
+          .box-header.with-border
+            %h3.box-title Open Issues
+          .box-body
+            .item-list{ 'ng-repeat' => 'item in currentMeeting.meeting_open_issues' }
+              .item{ 'ng-class' => 'itemClass(item, "meeting_open_issues")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ item.id }}' }
+                {{ item.description }}
+            .add-item{ 'ng-click' => 'addMeetingOpenIssue()' }
+              %i.fa.fa-plus
+              Add new open issue
