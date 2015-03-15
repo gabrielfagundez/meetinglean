@@ -33,12 +33,24 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
     }, delayTime)
   };
 
+  $scope.addSummary = function() {
+    $scope.currentMeeting.summary.push({
+      description: '',
+      meeting_id: 1
+    });
+    $timeout(function() {
+      $('.summary .item-list .item').last().focus()
+    }, delayTime)
+  };
+
   $scope.blur = function(event) {
     var element = $(event.target);
     var itemId = element.data().id;
 
     if(element.hasClass('agenda')) {
       $scope.currentMeeting.agenda = handleItemBlur($scope.currentMeeting.agenda, itemId, element.text().trim());
+    } else if(element.hasClass('summary')) {
+      $scope.currentMeeting.summary = handleItemBlur($scope.currentMeeting.summary, itemId, element.text().trim());
     } else {
       $scope.currentMeeting.private_notes = handleItemBlur($scope.currentMeeting.private_notes, itemId, element.text().trim());
     }

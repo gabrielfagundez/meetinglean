@@ -1,0 +1,14 @@
+#meetings
+  %section.content
+    .row
+      .col-lg-12
+        .box.box-default.summary
+          .box-header.with-border
+            %h3.box-title Meeting Summary
+          .box-body
+            .item-list{ 'ng-repeat' => 'summary in currentMeeting.summary' }
+              .item{ 'ng-class' => 'itemClass(summary, "summary")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ summary.id }}' }
+                {{ summary.description }}
+            .add-item{ 'ng-click' => 'addSummary()' }
+              %i.fa.fa-plus
+              Add new summary line

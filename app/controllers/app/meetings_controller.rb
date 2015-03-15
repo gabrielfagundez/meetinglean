@@ -8,4 +8,8 @@ class App::MeetingsController < ApplicationController
     render 'app/shared/blank'
   end
 
+  def start
+    render 'app/shared/blank'
+  end
+
 end

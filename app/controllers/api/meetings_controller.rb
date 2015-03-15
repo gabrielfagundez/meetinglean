@@ -11,7 +11,8 @@ class Api::MeetingsController < ApplicationController
       name: meeting.name,
       description: meeting.description,
       agenda: meeting.meeting_agendas,
-      private_notes: meeting.private_notes
+      private_notes: meeting.private_notes,
+      summary: meeting.meeting_summaries
     }
   end
 
