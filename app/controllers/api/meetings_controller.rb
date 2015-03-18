@@ -18,12 +18,12 @@ class Api::MeetingsController < ApplicationController
     if meeting
       meeting.name = params[:name] if params[:name].present?
       meeting.description = params[:description] if params[:description].present?
-      update_related_item(meeting, params[:agenda], MeetingAgenda) if params[:agenda].present?
-      update_related_item(meeting, params[:private_notes], PrivateNote) if params[:private_notes].present?
+      update_related_item(meeting, params[:meeting_agendas], MeetingAgenda) if params[:meeting_agendas].present?
+      update_related_item(meeting, params[:meeting_private_notes], MeetingPrivateNote) if params[:meeting_private_notes].present?
       update_related_item(meeting, params[:meeting_decisions], MeetingDecision) if params[:meeting_decisions].present?
       update_related_item(meeting, params[:meeting_open_issues], MeetingOpenIssue) if params[:meeting_open_issues].present?
       update_related_item(meeting, params[:meeting_action_items], MeetingActionItem) if params[:meeting_action_items].present?
-      update_related_item(meeting, params[:summary], MeetingSummary) if params[:summary].present?
+      update_related_item(meeting, params[:meeting_summaries], MeetingSummary) if params[:meeting_summaries].present?
 
       render json: meeting.full_json_data
     else
