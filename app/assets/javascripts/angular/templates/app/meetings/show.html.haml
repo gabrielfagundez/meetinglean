@@ -2,26 +2,26 @@
   %section.content
     .row
       .col-lg-8
-        .box.box-default.agenda
+        .box.box-default.meeting_agendas
           .box-header.with-border
             %h3.box-title Agenda
           .box-body
             .item-list{ 'ng-repeat' => 'agenda in currentMeeting.meeting_agendas' }
               .item{ 'ng-class' => 'itemClass(agenda, "agenda")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ agenda.id }}' }
                 {{ agenda.description }}
-            .add-item{ 'ng-click' => 'addMeetingAgenda()' }
+            .add-item{ 'ng-click' => 'addItem("meeting_agendas")' }
               %i.fa.fa-plus
               Add agenda item
 
       .col-lg-4
-        .box.box-default.private_notes
+        .box.box-default.meeting_private_notes
           .box-header.with-border.private
             %h3.box-title Private Notes
           .box-body.private-body
-            .item-list{ 'ng-repeat' => 'note in currentMeeting.private_notes' }
+            .item-list{ 'ng-repeat' => 'note in currentMeeting.meeting_private_notes' }
               .item{ 'ng-class' => 'doneItem(note, "private_note")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data_id' => '{{ private_note.id }}' }
                 {{ note.description }}
-            .add-item{ 'ng-click' => 'addPrivateNote()' }
+            .add-item{ 'ng-click' => 'addItem("meeting_private_notes")' }
               %i.fa.fa-plus
               Add private note
 

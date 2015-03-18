@@ -12,67 +12,17 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
   $scope.itemClass = function(item, prefix) {
     return item.done ? prefix + ' done ' + item.id : item.id + ' ' + prefix
   };
-  
-  $scope.addMeetingAgenda = function() {
-    $scope.currentMeeting.meeting_agendas.push({
-      description: '',
-      meeting_id: 1
-    });
-    $timeout(function() {
-      $('.agenda .item-list .item').last().focus()
-    }, delayTime)
-  };
-  
-  $scope.addPrivateNote = function() {
-    $scope.currentMeeting.private_notes.push({
-      description: '',
-      meeting_id: 1
-    });
-    $timeout(function() {
-      $('.private_notes .item-list .item').last().focus();
-    }, delayTime)
-  };
 
-  $scope.addSummary = function() {
-    $scope.currentMeeting.summary.push({
+  $scope.addItem = function(scope) {
+    $scope.currentMeeting[scope].push({
       description: '',
       meeting_id: 1
     });
-    $timeout(function() {
-      $('.summary .item-list .item').last().focus()
-    }, delayTime)
-  };
 
-  $scope.addMeetingDecision = function() {
-    $scope.currentMeeting.meeting_decisions.push({
-      description: '',
-      meeting_id: 1
-    });
     $timeout(function() {
-      $('.meeting_decisions .item-list .item').last().focus()
+      $('.' + scope + ' .item-list .item').last().focus()
     }, delayTime)
-  };
-
-  $scope.addMeetingActionItem = function() {
-    $scope.currentMeeting.meeting_action_items.push({
-      description: '',
-      meeting_id: 1
-    });
-    $timeout(function() {
-      $('.meeting_action_items .item-list .item').last().focus()
-    }, delayTime)
-  };
-
-  $scope.addMeetingOpenIssue = function() {
-    $scope.currentMeeting.meeting_open_issues.push({
-      description: '',
-      meeting_id: 1
-    });
-    $timeout(function() {
-      $('.meeting_open_issues .item-list .item').last().focus()
-    }, delayTime)
-  };
-
+  }
 
   $scope.blur = function(event) {
     var element = $(event.target);
@@ -80,17 +30,17 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
     var text = element.text().trim();
 
     if(element.hasClass('agenda')) {
-      handleItemBlur(MeetingAgenda, itemId, text);
+      handleItemBlur(MeetingAgenda, itemId, text, element);
     } else if(element.hasClass('summary')) {
-      $scope.currentMeeting.summary = handleItemBlur($scope.currentMeeting.summary, itemId, text);
+      handleItemBlur(MeetingSummaries, itemId, text, element);
     } else if(element.hasClass('meeting_decisions')) {
-      $scope.currentMeeting.meeting_decisions = handleItemBlur($scope.currentMeeting.meeting_decisions, itemId, text);
+      handleItemBlur(MeetingDecisions, itemId, text, element);
     } else if(element.hasClass('meeting_action_items')) {
-      $scope.currentMeeting.meeting_action_items = handleItemBlur($scope.currentMeeting.meeting_action_items, itemId, text);
+      handleItemBlur(MeetingActionItems, itemId, text, element);
     } else if(element.hasClass('meeting_open_issues')) {
-      $scope.currentMeeting.meeting_open_issues = handleItemBlur($scope.currentMeeting.meeting_open_issues, itemId, text);
+      handleItemBlur(MeetingOpenIssues, itemId, text, element);
     } else {
-      $scope.currentMeeting.private_notes = handleItemBlur($scope.currentMeeting.private_notes, itemId, text);
+      handleItemBlur(MeetingPrivateNotes, itemId, text, element);
     }
   };
 
@@ -98,12 +48,17 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
     return '/app/meetings/' + currentMeeting.id + '/start'
   };
 
-  function handleItemBlur(model, itemId, text) {
+  function handleItemBlur(model, itemId, text, element) {
     if(itemId == '') {
-      model.save(
-        { meetingId: $scope.currentMeeting.id, format: 'json' },
-        { description: text }
-      )
+      if(text != '') {
+        model.save(
+          { meetingId: $scope.currentMeeting.id, format: 'json' },
+          { description: text },
+          function(data) {
+            element.attr('data-id', data.id)
+          }
+        )
+      }
     } else {
       model.update(
         { meetingId: $scope.currentMeeting.id, id: itemId, format: 'json' },

@@ -2,23 +2,23 @@
   %section.content
     .row
       .col-lg-8
-        .box.box-default.summary
+        .box.box-default.meeting_summaries
           .box-header.with-border
             %h3.box-title Meeting Summary
           .box-body
-            .item-list{ 'ng-repeat' => 'summary in currentMeeting.summary' }
+            .item-list{ 'ng-repeat' => 'summary in currentMeeting.meeting_summaries' }
               .item{ 'ng-class' => 'itemClass(summary, "summary")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ summary.id }}' }
                 {{ summary.description }}
-            .add-item{ 'ng-click' => 'addSummary()' }
+            .add-item{ 'ng-click' => 'addItem("meeting_summaries")' }
               %i.fa.fa-plus
               Add new summary line
 
       .col-lg-4
-        .box.box-warning.agenda
+        .box.box-warning.meeting_agendas
           .box-header.with-border
             %h3.box-title Agenda
           .box-body
-            .item-list{ 'ng-repeat' => 'agenda in currentMeeting.agenda' }
+            .item-list{ 'ng-repeat' => 'agenda in currentMeeting.meeting_agendas' }
               .item{ 'ng-class' => 'itemClass(agenda, "agenda")' }
                 {{ agenda.description }}
 
@@ -33,7 +33,7 @@
             .item-list{ 'ng-repeat' => 'item in currentMeeting.meeting_decisions' }
               .item{ 'ng-class' => 'itemClass(item, "meeting_decisions")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ item.id }}' }
                 {{ item.description }}
-            .add-item{ 'ng-click' => 'addMeetingDecision()' }
+            .add-item{ 'ng-click' => 'addItem("meeting_decisions")' }
               %i.fa.fa-plus
               Add new decision
 
@@ -45,7 +45,7 @@
             .item-list{ 'ng-repeat' => 'item in currentMeeting.meeting_action_items' }
               .item{ 'ng-class' => 'itemClass(item, "meeting_action_items")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ item.id }}' }
                 {{ item.description }}
-            .add-item{ 'ng-click' => 'addMeetingActionItem()' }
+            .add-item{ 'ng-click' => 'addItem("meeting_action_items")' }
               %i.fa.fa-plus
               Add new action item
 
@@ -57,6 +57,6 @@
             .item-list{ 'ng-repeat' => 'item in currentMeeting.meeting_open_issues' }
               .item{ 'ng-class' => 'itemClass(item, "meeting_open_issues")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ item.id }}' }
                 {{ item.description }}
-            .add-item{ 'ng-click' => 'addMeetingOpenIssue()' }
+            .add-item{ 'ng-click' => 'addItem("meeting_open_issues")' }
               %i.fa.fa-plus
               Add new open issue
