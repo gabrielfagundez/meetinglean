@@ -1,4 +1,4 @@
-app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routeParams', 'Meeting', 'MeetingAgenda', function($scope, $route, $timeout, $routeParams, Meeting, MeetingAgenda) {
+app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routeParams', 'Meeting', 'MeetingActionItems', 'MeetingAgenda', 'MeetingDecisions', 'MeetingOpenIssues', 'MeetingPrivateNotes', 'MeetingSummaries', function($scope, $route, $timeout, $routeParams, Meeting, MeetingActionItems, MeetingAgenda, MeetingDecisions, MeetingOpenIssues, MeetingPrivateNotes, MeetingSummaries) {
 
   var delayTime = 0;
 
