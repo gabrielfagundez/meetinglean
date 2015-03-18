@@ -17,28 +17,45 @@ ActiveRecord::Schema.define(version: 20150315183050) do
   enable_extension "plpgsql"
 
   create_table "meeting_action_items", force: true do |t|
-    t.string "description"
-    t.string "meeting_id"
+    t.string   "description"
+    t.string   "meeting_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "meeting_agendas", force: true do |t|
-    t.string "description"
-    t.string "meeting_id"
+    t.string   "description"
+    t.string   "meeting_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "meeting_decisions", force: true do |t|
-    t.string "description"
-    t.string "meeting_id"
+    t.string   "description"
+    t.string   "meeting_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "meeting_open_issues", force: true do |t|
-    t.string "description"
-    t.string "meeting_id"
+    t.string   "description"
+    t.string   "meeting_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "meeting_private_notes", force: true do |t|
+    t.string   "description"
+    t.string   "meeting_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "meeting_summaries", force: true do |t|
-    t.string "description"
-    t.string "meeting_id"
+    t.string   "description"
+    t.string   "meeting_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "meetings", force: true do |t|
@@ -48,11 +65,6 @@ ActiveRecord::Schema.define(version: 20150315183050) do
     t.datetime "end_time"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "private_notes", force: true do |t|
-    t.string "description"
-    t.string "meeting_id"
   end
 
 end
