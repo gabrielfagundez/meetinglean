@@ -3,7 +3,9 @@ Meetinglean::Application.routes.draw do
   root to: 'landing#index'
 
   namespace :api do
-    resources :meetings
+    resources :meetings do
+      resources :meeting_agendas, only: [:create, :update]
+    end
   end
 
   namespace :app do
