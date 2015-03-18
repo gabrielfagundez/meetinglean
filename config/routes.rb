@@ -4,7 +4,12 @@ Meetinglean::Application.routes.draw do
 
   namespace :api do
     resources :meetings do
+      resources :meeting_action_items, only: [:create, :update]
       resources :meeting_agendas, only: [:create, :update]
+      resources :meeting_decisions, only: [:create, :update]
+      resources :meeting_open_issues, only: [:create, :update]
+      resources :meeting_private_notes, only: [:create, :update]
+      resources :meeting_summaries, only: [:create, :update]
     end
   end
 
