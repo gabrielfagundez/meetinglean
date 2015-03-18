@@ -40,7 +40,7 @@ class Api::MeetingsController < ApplicationController
         meeting_agenda.description = item[:description]
         meeting_agenda.save
       else
-        MeetingAgenda.create(meeting_id: meeting.id, description: meeting_agenda[:description])
+        klass.create(meeting_id: meeting.id, description: item[:description])
       end
     end
   end

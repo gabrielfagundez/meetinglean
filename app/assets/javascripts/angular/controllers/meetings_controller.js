@@ -91,6 +91,8 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
     } else {
       $scope.currentMeeting.private_notes = handleItemBlur($scope.currentMeeting.private_notes, itemId, element.text().trim());
     }
+
+    Meeting.update({ meetingId: $scope.currentMeeting.id, format: 'json' }, $scope.currentMeeting)
   };
 
   $scope.startMeetingPath = function(currentMeeting) {
