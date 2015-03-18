@@ -15,9 +15,9 @@
 
       .col-lg-4
         .box.box-default.private_notes
-          .box-header.with-border
+          .box-header.with-border.private
             %h3.box-title Private Notes
-          .box-body
+          .box-body.private-body
             .item-list{ 'ng-repeat' => 'note in currentMeeting.private_notes' }
               .item{ 'ng-class' => 'doneItem(note, "private_note")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data_id' => '{{ private_note.id }}' }
                 {{ note.description }}

@@ -32,6 +32,12 @@
       i { padding-right: 10px }
     }
   }
+  .private {
+    background-image: image-url('meetings/panel-locked.png');
+  }
+  .private-body {
+    background-color: #fdfdfd;
+  }
   .separator {
     margin: 25px 0;
     border-bottom: 1px solid #d2d6de;
