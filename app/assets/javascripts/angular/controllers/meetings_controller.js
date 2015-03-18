@@ -22,7 +22,7 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
     $timeout(function() {
       $('.' + scope + ' .item-list .item').last().focus()
     }, delayTime)
-  }
+  };
 
   $scope.blur = function(event) {
     var element = $(event.target);
@@ -49,20 +49,18 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
   };
 
   function handleItemBlur(model, itemId, text, element) {
-    if(itemId == '') {
+    if(itemId == undefined || itemId == '' || itemId == null) {
       if(text != '') {
         model.save(
           { meetingId: $scope.currentMeeting.id, format: 'json' },
           { description: text },
-          function(data) {
-            element.attr('data-id', data.id)
-          }
+          function(data) { element.attr('data-id', data.id) }
         )
       }
     } else {
       model.update(
         { meetingId: $scope.currentMeeting.id, id: itemId, format: 'json' },
-        { meeting_agenda: { description: text, meeting_id: $scope.currentMeeting.id }}
+        { description: text, meeting_id: $scope.currentMeeting.id }
       )
     }
   }

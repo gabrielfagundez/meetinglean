@@ -8,8 +8,8 @@ class Api::MeetingAgendasController < ApplicationController
 
   def update
     meeting_agenda = MeetingAgenda.find(params[:id])
-    meeting_agenda.description = params[:meeting_agenda][:description]
-    meeting_agenda.meeting_id = params[:meeting_agenda][:meeting_id]
+    meeting_agenda.description = params[:description]
+    meeting_agenda.meeting_id = params[:meeting_id]
     meeting_agenda.save
 
     render json: meeting_agenda.to_json

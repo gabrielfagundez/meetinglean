@@ -8,8 +8,8 @@ class Api::MeetingActionItemsController < ApplicationController
 
   def update
     meeting_action_item = MeetingActionItem.find(params[:id])
-    meeting_action_item.description = params[:meeting_action_item][:description]
-    meeting_action_item.meeting_id = params[:meeting_action_item][:meeting_id]
+    meeting_action_item.description = params[:description]
+    meeting_action_item.meeting_id = params[:meeting_id]
     meeting_action_item.save
 
     render json: meeting_action_item.to_json
