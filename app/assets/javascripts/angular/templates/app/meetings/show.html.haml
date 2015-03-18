@@ -6,10 +6,10 @@
           .box-header.with-border
             %h3.box-title Agenda
           .box-body
-            .item-list{ 'ng-repeat' => 'agenda in currentMeeting.agenda' }
+            .item-list{ 'ng-repeat' => 'agenda in currentMeeting.meeting_agendas' }
               .item{ 'ng-class' => 'itemClass(agenda, "agenda")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ agenda.id }}' }
                 {{ agenda.description }}
-            .add-item{ 'ng-click' => 'addAgenda()' }
+            .add-item{ 'ng-click' => 'addMeetingAgenda()' }
               %i.fa.fa-plus
               Add agenda item
 

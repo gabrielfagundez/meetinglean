@@ -1,4 +1,4 @@
-app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routeParams', 'Meeting',function($scope, $route, $timeout, $routeParams, Meeting){
+app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routeParams', 'Meeting', 'MeetingAgenda', function($scope, $route, $timeout, $routeParams, Meeting, MeetingAgenda) {
 
   var delayTime = 0;
 
@@ -13,8 +13,8 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
     return item.done ? prefix + ' done ' + item.id : item.id + ' ' + prefix
   };
   
-  $scope.addAgenda = function() {
-    $scope.currentMeeting.agenda.push({
+  $scope.addMeetingAgenda = function() {
+    $scope.currentMeeting.meeting_agendas.push({
       description: '',
       meeting_id: 1
     });
@@ -77,55 +77,39 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
   $scope.blur = function(event) {
     var element = $(event.target);
     var itemId = element.data().id;
+    var text = element.text().trim();
 
     if(element.hasClass('agenda')) {
-      $scope.currentMeeting.agenda = handleItemBlur($scope.currentMeeting.agenda, itemId, element.text().trim());
+      handleItemBlur(MeetingAgenda, itemId, text);
     } else if(element.hasClass('summary')) {
-      $scope.currentMeeting.summary = handleItemBlur($scope.currentMeeting.summary, itemId, element.text().trim());
+      $scope.currentMeeting.summary = handleItemBlur($scope.currentMeeting.summary, itemId, text);
     } else if(element.hasClass('meeting_decisions')) {
-      $scope.currentMeeting.meeting_decisions = handleItemBlur($scope.currentMeeting.meeting_decisions, itemId, element.text().trim());
+      $scope.currentMeeting.meeting_decisions = handleItemBlur($scope.currentMeeting.meeting_decisions, itemId, text);
     } else if(element.hasClass('meeting_action_items')) {
-      $scope.currentMeeting.meeting_action_items = handleItemBlur($scope.currentMeeting.meeting_action_items, itemId, element.text().trim());
+      $scope.currentMeeting.meeting_action_items = handleItemBlur($scope.currentMeeting.meeting_action_items, itemId, text);
     } else if(element.hasClass('meeting_open_issues')) {
-      $scope.currentMeeting.meeting_open_issues = handleItemBlur($scope.currentMeeting.meeting_open_issues, itemId, element.text().trim());
+      $scope.currentMeeting.meeting_open_issues = handleItemBlur($scope.currentMeeting.meeting_open_issues, itemId, text);
     } else {
-      $scope.currentMeeting.private_notes = handleItemBlur($scope.currentMeeting.private_notes, itemId, element.text().trim());
+      $scope.currentMeeting.private_notes = handleItemBlur($scope.currentMeeting.private_notes, itemId, text);
     }
-
-    Meeting.update({ meetingId: $scope.currentMeeting.id, format: 'json' }, $scope.currentMeeting)
   };
 
   $scope.startMeetingPath = function(currentMeeting) {
     return '/app/meetings/' + currentMeeting.id + '/start'
   };
 
-  function handleItemBlur(itemList, itemId, text) {
-    var newItemList = [];
-
-    var found = false;
-    $.each(itemList, function(index, value) {
-      if(String(itemId) != String(value.id)) {
-        if(value.description != '') {
-          newItemList.push(value);
-        }
-      } else {
-        if(text != '') {
-          value.description = text;
-          newItemList.push(value)
-          found = true;
-        }
-      }
-    });
-
-    if(!found) {
-      if(text != '') {
-        newItemList.push({
-          description: text
-        })
-      }
+  function handleItemBlur(model, itemId, text) {
+    if(itemId == '') {
+      model.save(
+        { meetingId: $scope.currentMeeting.id, format: 'json' },
+        { description: text }
+      )
+    } else {
+      model.update(
+        { meetingId: $scope.currentMeeting.id, id: itemId, format: 'json' },
+        { meeting_agenda: { description: text, meeting_id: $scope.currentMeeting.id }}
+      )
     }
-
-    return newItemList;
   }
 
 }]);
