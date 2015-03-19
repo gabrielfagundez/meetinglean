@@ -64,6 +64,8 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
       { meetingId: $scope.currentMeeting().id, format: 'json' },
       { started: 'true' }, function(data) {
     });
+    $scope.meeting = null;
+    $scope.currentMeeting();
   };
 
   $scope.meetingStatusTemplateUrl = function() {
