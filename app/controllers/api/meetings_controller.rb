@@ -21,7 +21,8 @@ class Api::MeetingsController < ApplicationController
     meeting = Meeting.find_by_id(params[:id])
     if meeting
       meeting.name = params[:name] if params[:name].present?
-      meeting.started = params[:started] if params[:started].present?
+      meeting.started = true if params[:started].present? && params[:started] == 'true'
+      meeting.save!
       update_related_item(meeting, params[:meeting_agendas], MeetingAgenda) if params[:meeting_agendas].present?
       update_related_item(meeting, params[:meeting_private_notes], MeetingPrivateNote) if params[:meeting_private_notes].present?
       update_related_item(meeting, params[:meeting_decisions], MeetingDecision) if params[:meeting_decisions].present?

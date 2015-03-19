@@ -62,12 +62,12 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
   $scope.startMeeting = function() {
     Meeting.update(
       { meetingId: $scope.currentMeeting().id, format: 'json' },
-      { started: true }, function(data) {
+      { started: 'true' }, function(data) {
     });
   };
 
   $scope.meetingStatusTemplateUrl = function() {
-    return RouteHandler.meetingStatusTemplateUrl($scope.currentMeeting)
+    return RouteHandler.meetingStatusTemplateUrl($scope.currentMeeting())
   };
 
   $scope.newMeeting = function() {
