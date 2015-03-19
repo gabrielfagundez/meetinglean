@@ -16,7 +16,7 @@ Meetinglean::Application.routes.draw do
   namespace :app do
     root to: 'home#index'
 
-    resources :meetings, only: [:index, :show] do
+    resources :meetings, only: [:index, :show, :create] do
       member do
         get :start
       end

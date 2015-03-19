@@ -13,6 +13,10 @@ class Api::MeetingsController < ApplicationController
     end
   end
 
+  def create
+    render json: Meeting.create(name: 'Meeting Name', start_time: DateTime.now).full_json_data
+  end
+
   def update
     meeting = Meeting.find_by_id(params[:id])
     if meeting

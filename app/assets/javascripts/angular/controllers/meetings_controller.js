@@ -1,4 +1,4 @@
-app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routeParams', 'Meeting', 'MeetingActionItems', 'MeetingAgenda', 'MeetingDecisions', 'MeetingOpenIssues', 'MeetingPrivateNotes', 'MeetingSummaries', function($scope, $route, $timeout, $routeParams, Meeting, MeetingActionItems, MeetingAgenda, MeetingDecisions, MeetingOpenIssues, MeetingPrivateNotes, MeetingSummaries) {
+app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location', '$routeParams', 'Meeting', 'MeetingActionItems', 'MeetingAgenda', 'MeetingDecisions', 'MeetingOpenIssues', 'MeetingPrivateNotes', 'MeetingSummaries', function($scope, $route, $timeout, $location, $routeParams, Meeting, MeetingActionItems, MeetingAgenda, MeetingDecisions, MeetingOpenIssues, MeetingPrivateNotes, MeetingSummaries) {
 
   var delayTime = 0;
 
@@ -47,6 +47,12 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$routePar
   $scope.startMeetingPath = function(currentMeeting) {
     return '/app/meetings/' + currentMeeting.id + '/start'
   };
+
+  $scope.newMeeting = function() {
+    Meeting.save(function(data) {
+      $location.url('/app/meetings/' + data.id)
+    })
+  }
 
   function handleItemBlur(model, itemId, text, element) {
     if(itemId == undefined || itemId == '' || itemId == null) {

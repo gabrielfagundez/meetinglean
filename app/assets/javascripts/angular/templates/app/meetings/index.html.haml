@@ -1,5 +1,12 @@
-%section.content
-  .row
+#meetings-index
+  .meetings-title
+    %h1 My Timeline
+    %a.btn.btn-app{ 'ng-click' => 'newMeeting()' }
+      %i.fa.fa-plus
+      Add new meeting
+
+
+  %section.content
     .col-lg-12
       %ul.timeline
         %li{ 'ng-repeat' => 'meeting in meetings' }
