@@ -2,7 +2,7 @@ class AddMeetingsTable < ActiveRecord::Migration
   def change
     create_table :meetings do |t|
       t.string :name
-      t.string :description
+      t.boolean :started
 
       t.datetime :start_time
       t.datetime :end_time
