@@ -2,8 +2,23 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
 
   var delayTime = 0;
 
+  $scope.$on('$routeChangeSuccess', function(){
+    $scope.meeting = null;
+    $scope.meetings = Meeting.query();
+  });
+
   $scope.meetings = Meeting.query();
-  $scope.currentMeeting = Meeting.get({ meetingId: 2, format: 'json' });
+  $scope.meeting = null;
+  $scope.currentMeeting = function() {
+    if($scope.meeting != null) {
+      return $scope.meeting
+    } else {
+      if($routeParams.id != null) {
+        $scope.meeting = Meeting.get({ meetingId: $routeParams.id, format: 'json' });
+        return $scope.meeting;
+      }
+    }
+  };
 
   $scope.meetingPath = function(meetingId) {
     return '/app/meetings/' + meetingId;
@@ -14,7 +29,7 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
   };
 
   $scope.addItem = function(scope) {
-    $scope.currentMeeting[scope].push({
+    $scope.currentMeeting()[scope].push({
       description: '',
       meeting_id: 1
     });
@@ -46,7 +61,7 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
 
   $scope.startMeeting = function() {
     Meeting.update(
-      { meetingId: $scope.currentMeeting.id, format: 'json' },
+      { meetingId: $scope.currentMeeting().id, format: 'json' },
       { started: true }, function(data) {
     });
   };
@@ -65,15 +80,15 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
     if(itemId == undefined || itemId == '' || itemId == null) {
       if(text != '') {
         model.save(
-          { meetingId: $scope.currentMeeting.id, format: 'json' },
+          { meetingId: $scope.currentMeeting().id, format: 'json' },
           { description: text },
           function(data) { element.attr('data-id', data.id) }
         )
       }
     } else {
       model.update(
-        { meetingId: $scope.currentMeeting.id, id: itemId, format: 'json' },
-        { description: text, meeting_id: $scope.currentMeeting.id }
+        { meetingId: $scope.currentMeeting().id, id: itemId, format: 'json' },
+        { description: text, meeting_id: $scope.currentMeeting().id }
       )
     }
   }
