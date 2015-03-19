@@ -1,4 +1,14 @@
 #meetings {
+  .meeting-header {
+    background: image-url('meetings/header.jpg') no-repeat center/cover #3a4249;
+    height: 300px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    color: #ffffff;
+    padding-bottom: 22px;
+    position: relative;
+    text-align: center;
+  }
   .box {
     .item-list {
       .item {
