@@ -45,6 +45,29 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
     }
   };
 
+  $scope.keydown = function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      var element = $(event.target);
+      var itemId = element.data().id;
+      var text = element.text().trim();
+
+      if(element.hasClass('agenda')) {
+        $scope.addItem('meeting_agendas');
+      } else if(element.hasClass('summary')) {
+        $scope.addItem('meeting_summaries');
+      } else if(element.hasClass('meeting_decisions')) {
+        $scope.addItem('meeting_decisions');
+      } else if(element.hasClass('meeting_action_items')) {
+        $scope.addItem('meeting_action_items');
+      } else if(element.hasClass('meeting_open_issues')) {
+        $scope.addItem('meeting_open_issues');
+      } else {
+        $scope.addItem('meeting_private_notes');
+      }
+    }
+  };
+
   $scope.blur = function(event) {
     var element = $(event.target);
     var itemId = element.data().id;
