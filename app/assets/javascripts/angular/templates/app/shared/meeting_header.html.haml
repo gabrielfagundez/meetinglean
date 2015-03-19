@@ -1,5 +1,5 @@
 .meeting-header
-  .title
+  .title{ 'contenteditable' => 'true', 'ng-blur' => 'handleTitleBlur()', 'ng-keydown' => 'handleTitleKeydown($event)' }
     {{ currentMeeting().name }}
   .start-time
     Start Time:

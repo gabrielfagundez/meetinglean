@@ -39,6 +39,12 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
     }, delayTime)
   };
 
+  $scope.handleTitleKeydown = function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+    }
+  };
+
   $scope.blur = function(event) {
     var element = $(event.target);
     var itemId = element.data().id;
@@ -58,6 +64,13 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
       handleItemBlur(MeetingPrivateNotes, itemId, text, element);
     }
   };
+
+  $scope.handleTitleBlur = function() {
+    Meeting.update(
+      { meetingId: $scope.currentMeeting().id, format: 'json' },
+      { name: $('.meeting-header .title').html() }, function(data) {
+      });
+  }
 
   $scope.startMeeting = function() {
     Meeting.update(
