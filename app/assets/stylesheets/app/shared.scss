@@ -1,3 +1,17 @@
 body {
   -webkit-font-smoothing: antialiased;
+
+  aside.main-sidebar {
+    width: 80px;
+    a {
+      font-size: 30px;
+      padding-left: 21px;
+    }
+  }
+  a.logo {
+    width: 80px !important;
+  }
+  .content-wrapper {
+    margin-left: 80px;
+  }
 }
