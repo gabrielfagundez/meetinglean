@@ -1,9 +1,9 @@
-app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location', '$routeParams', 'Meeting', 'MeetingActionItems', 'MeetingAgenda', 'MeetingDecisions', 'MeetingOpenIssues', 'MeetingPrivateNotes', 'MeetingSummaries', function($scope, $route, $timeout, $location, $routeParams, Meeting, MeetingActionItems, MeetingAgenda, MeetingDecisions, MeetingOpenIssues, MeetingPrivateNotes, MeetingSummaries) {
+app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location', '$routeParams', 'RouteHandler', 'Meeting', 'MeetingActionItems', 'MeetingAgenda', 'MeetingDecisions', 'MeetingOpenIssues', 'MeetingPrivateNotes', 'MeetingSummaries', function($scope, $route, $timeout, $location, $routeParams, RouteHandler, Meeting, MeetingActionItems, MeetingAgenda, MeetingDecisions, MeetingOpenIssues, MeetingPrivateNotes, MeetingSummaries) {
 
   var delayTime = 0;
 
   $scope.meetings = Meeting.query();
-  $scope.currentMeeting = Meeting.get({ meetingId: 1, format: 'json' });
+  $scope.currentMeeting = Meeting.get({ meetingId: 2, format: 'json' });
 
   $scope.meetingPath = function(meetingId) {
     return '/app/meetings/' + meetingId;
@@ -44,15 +44,22 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
     }
   };
 
-  $scope.startMeetingPath = function(currentMeeting) {
-    return '/app/meetings/' + currentMeeting.id + '/start'
+  $scope.startMeeting = function() {
+    Meeting.update(
+      { meetingId: $scope.currentMeeting.id, format: 'json' },
+      { started: true }, function(data) {
+    });
+  };
+
+  $scope.meetingStatusTemplateUrl = function() {
+    return RouteHandler.meetingStatusTemplateUrl($scope.currentMeeting)
   };
 
   $scope.newMeeting = function() {
     Meeting.save(function(data) {
       $location.url('/app/meetings/' + data.id)
     })
-  }
+  };
 
   function handleItemBlur(model, itemId, text, element) {
     if(itemId == undefined || itemId == '' || itemId == null) {

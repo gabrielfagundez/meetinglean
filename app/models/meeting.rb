@@ -14,7 +14,7 @@ class Meeting < ActiveRecord::Base
         name: self.name,
         start_time: start_time,
         started: self.started,
-        description: self.description,
+        finished: self.finished,
         meeting_agendas: self.meeting_agendas.order('created_at ASC').all,
         meeting_private_notes: self.meeting_private_notes.order('created_at ASC'),
         meeting_decisions: self.meeting_decisions.order('created_at ASC'),

@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150315183050) do
   create_table "meetings", force: true do |t|
     t.string   "name"
     t.boolean  "started",    default: false, null: false
+    t.boolean  "finished",   default: false, null: false
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at",                 null: false
