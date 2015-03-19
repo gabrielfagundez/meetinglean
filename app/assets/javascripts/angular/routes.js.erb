@@ -3,7 +3,6 @@ app.config(
       $routeProvider.
           when('/app',                    { templateUrl: '<%= asset_path('angular/templates/app/index.html') %>' }).
           when('/app/meetings',           { templateUrl: '<%= asset_path('angular/templates/app/meetings/index.html') %>' }).
-          when('/app/meetings/:id',       { templateUrl: '<%= asset_path('angular/templates/app/meetings/show.html') %>' }).
-          when('/app/meetings/:id/start', { templateUrl: '<%= asset_path('angular/templates/app/meetings/start.html') %>' })
+          when('/app/meetings/:id',       { templateUrl: '<%= asset_path('angular/templates/app/meetings/show.html') %>' })
     }]
 );
