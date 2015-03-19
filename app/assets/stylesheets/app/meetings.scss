@@ -5,9 +5,22 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     color: #ffffff;
-    padding-bottom: 22px;
+    padding: 70px;
     position: relative;
     text-align: center;
+    .title {
+      font-size: 50px;
+      line-height: 45px;
+      margin: 0 120px;
+      padding-top: 3px;
+      text-transform: uppercase;
+    }
+    .start-time {
+      font-size: 25px;
+      margin-top: 20px;
+      color: #777;
+      text-transform: uppercase;
+    }
   }
   .box {
     .item-list {

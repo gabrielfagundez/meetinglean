@@ -11,6 +11,7 @@ class Meeting < ActiveRecord::Base
     {
         id: self.id,
         name: self.name,
+        start_time: self.start_time.strftime('%A, %B %-d, %Y - %H:%M'),
         description: self.description,
         meeting_agendas: self.meeting_agendas.order('created_at ASC').all,
         meeting_private_notes: self.meeting_private_notes.order('created_at ASC'),
