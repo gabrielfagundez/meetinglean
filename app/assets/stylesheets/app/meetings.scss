@@ -81,6 +81,15 @@
     margin: 25px 0;
     border-bottom: 1px solid #d2d6de;
   }
+  .summary-controls-button {
+    color: #888;
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      color: #444;
+    }
+  }
   .options {
     width: 100%;
     text-align: center;

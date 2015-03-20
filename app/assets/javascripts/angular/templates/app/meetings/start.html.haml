@@ -21,8 +21,14 @@
             {{ agenda.description }}
 
 .row
-  .col-lg-12
+  .col-lg-9
     .separator
+  .col-lg-3
+    .summary-controls-button{ 'ng-click' => 'toggleSummaryControls()' }
+      %i.fa.fa-plus
+      Hide/Show Advanced Components
+
+.row.summary-controls.hide
   .col-lg-4
     .box.box-default.meeting_decisions
       .box-header.with-border

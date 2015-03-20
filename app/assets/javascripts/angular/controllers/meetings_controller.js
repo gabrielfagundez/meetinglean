@@ -114,6 +114,10 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
     })
   };
 
+  $scope.toggleSummaryControls = function() {
+    $('.summary-controls').toggleClass('hide', 300)
+  };
+
   function handleItemBlur(model, itemId, text, element) {
     if(itemId == undefined || itemId == '' || itemId == null) {
       if(text != '') {
