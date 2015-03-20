@@ -1,10 +1,11 @@
 #meetings-index
-  .meetings-title
-    %h1 My Timeline
-    %a.btn.btn-app{ 'ng-click' => 'newMeeting()' }
-      %i.fa.fa-plus
-      Add new meeting
-
+  .meeting-header
+    .title
+      My Meetings
+    .menu
+      %a.btn.btn-app{ 'ng-click' => 'newMeeting()' }
+        %i.fa.fa-plus
+        Add new meeting
 
   %section.content
     .col-lg-12
