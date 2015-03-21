@@ -20,14 +20,14 @@ Meetlean::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -59,8 +59,8 @@ Meetlean::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.scss, and all non-JS/CSS in app/assets folder are already added.
+  config.assets.precompile += %w( landing.scss agency/agency.scss adminLTE/AdminLTE.css )
   config.assets.precompile += %w(*.eot *.svg *.ttf *.otf *.woff)
-  config.assets.precompile += %w(landing.scss agency/agency.scss adminLTE/AdminLTE.css)
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
