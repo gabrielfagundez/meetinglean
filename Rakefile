@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Meetinglean::Application.load_tasks
+Meetlean::Application.load_tasks

@@ -1,4 +1,4 @@
-Meetinglean::Application.routes.draw do
+Meetlean::Application.routes.draw do
 
   root to: 'landing#index'
 
