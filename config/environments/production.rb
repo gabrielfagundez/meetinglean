@@ -60,7 +60,7 @@ Meetinglean::Application.configure do
   # Precompile additional assets.
   # application.js, application.scss, and all non-JS/CSS in app/assets folder are already added.
   config.assets.precompile += %w(*.eot *.svg *.ttf *.otf *.woff)
-  config.assets.precompile += %w(landing.scss)
+  config.assets.precompile += %w(landing.scss agency/agency.scss adminLTE/AdminLTE.css)
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
