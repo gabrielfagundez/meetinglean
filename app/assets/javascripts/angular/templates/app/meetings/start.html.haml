@@ -21,6 +21,13 @@
             {{ agenda.description }}
 
 .row
+  .col-lg-12
+    .options
+      %a.btn.btn-app{ 'ng-click' => 'endMeeting()' }
+        %i.fa.fa-play
+        End Meeting
+
+.row
   .col-lg-9
     .separator
   .col-lg-3

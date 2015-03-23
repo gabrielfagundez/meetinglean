@@ -96,10 +96,13 @@ app.controller('MeetingsController', ['$scope', '$route', '$timeout', '$location
   }
 
   $scope.startMeeting = function() {
-    Meeting.update(
-      { meetingId: $scope.currentMeeting().id, format: 'json' },
-      { started: 'true' }, function(data) {
-    });
+    Meeting.update({ meetingId: $scope.currentMeeting().id, format: 'json' }, { started: 'true' });
+    $scope.meeting = null;
+    $scope.currentMeeting();
+  };
+
+  $scope.endMeeting = function() {
+    Meeting.update({ meetingId: $scope.currentMeeting().id, format: 'json' }, { finished: 'true' });
     $scope.meeting = null;
     $scope.currentMeeting();
   };
