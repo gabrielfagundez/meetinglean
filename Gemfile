@@ -14,6 +14,9 @@ gem 'therubyracer'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
 
+# Gemfile
+gem 'google-api-client'
+
 # Assets handling
 gem 'bower-rails'
 
