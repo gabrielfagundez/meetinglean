@@ -12,7 +12,6 @@
 //= require agency/agency
 //= require agency/cbpAnimatedHeader
 //= require agency/classie
-//= require agency/contact_me
 //= require agency/jqBootstrapValidation
 
 // App
