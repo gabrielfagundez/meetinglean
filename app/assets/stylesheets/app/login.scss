@@ -1,0 +1,17 @@
+.login-page-container {
+  height: 100%;
+  color: #fff;
+  background-image: image-url('landing/header-bg.jpg');
+  background-position: center center;
+  background-repeat: none;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+
+  .login-box {
+    margin: 0 auto;
+    padding: 7% 0;
+  }
+}
