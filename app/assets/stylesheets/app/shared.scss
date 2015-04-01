@@ -6,20 +6,32 @@ html {
     -webkit-font-smoothing: antialiased;
 
     aside.main-sidebar {
-      width: 80px;
+      width: 110px;
+      padding-top: 0;
       a {
-        font-size: 30px;
-        padding-left: 21px;
+        text-align: center;
+        padding: 20px 5px 20px 0;
+        .fa { width: auto; }
+        &.user-image {
+          img {
+            border-radius: 100%;
+            width: 80%;
+          }
+        }
+        i {
+          font-size: 30px;
+        }
+        p {
+          font-size: 15px;
+          width: 100%;
+        }
       }
     }
-    a.logo {
-      width: 80px !important;
-    }
     .content-wrapper {
-      margin-left: 80px;
+      margin-left: 110px;
       min-height: 100%;
       display: inline-block;
-      width: calc(100% - 80px);
+      width: calc(100% - 110px);
       padding-bottom: 100px;
       margin-top: -50px;
     }

@@ -2,7 +2,13 @@
   %section.sidebar
     %ul.sidebar-menu
       %li
+        %a{ href: '/app' }
+          = image_tag('do_logo.png')
+        %a.user-image
+          = image_tag 'user-image.jpg'
         %a{ href: '/app/meetings' }
           %i.fa.fa-dashboard
+          %p Dashboard
         %a{ href: '/app/meetings' }
           %i.fa.fa-calendar
+          %p Timeline
