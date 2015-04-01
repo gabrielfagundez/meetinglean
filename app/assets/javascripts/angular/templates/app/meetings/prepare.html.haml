@@ -23,10 +23,7 @@
           %i.fa.fa-plus
           Add private note
 
-  .col-lg-12
-    .separator
-
-    .options
-      %a.btn.btn-app{ 'ng-click' => 'startMeeting()' }
+    .sticky-footer
+      %a.btn.btn-start-meeting{ 'ng-click' => 'startMeeting()' }
         %i.fa.fa-play
         Start Meeting
