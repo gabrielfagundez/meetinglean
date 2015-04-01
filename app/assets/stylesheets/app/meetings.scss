@@ -1,6 +1,6 @@
 #meetings {
   .meeting-header {
-    background: image-url('meetings/header.jpg') no-repeat center/cover #3a4249;
+    background: image-url('covers/1.jpg') no-repeat center/cover #3a4249;
     height: 300px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -13,14 +13,12 @@
       line-height: 45px;
       margin: 0 120px;
       padding-top: 3px;
-      text-transform: uppercase;
       outline: none;
     }
-    .start-time {
+    .meeting-description {
       font-size: 25px;
       margin-top: 20px;
-      color: #777;
-      text-transform: uppercase;
+      color: #aaaaaa;
     }
     .user-image {
       position: absolute;
@@ -35,14 +33,17 @@
       }
     }
     .menu {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 70px;
-      padding-top: 5px;
-      opacity: 0.4;
-      z-index: 998;
-      background-color: #000000;
+      text-align: center;
+      margin-top: -20px;
+      .menu-title {
+        font-weight: bold;
+      }
+      .menu-left {
+        border-right: 1px solid #cccccc;
+      }
+      .menu-right {
+        border-left: 1px solid #cccccc;
+      }
     }
   }
   .content {
@@ -125,7 +126,6 @@
       line-height: 45px;
       margin: 0 120px;
       padding-top: 3px;
-      text-transform: uppercase;
       outline: none;
     }
     .menu {
