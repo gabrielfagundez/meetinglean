@@ -46,3 +46,17 @@
         .item-list{ 'ng-repeat' => 'item in currentMeeting().meeting_open_issues' }
           .item{ 'ng-class' => 'itemClass(item, "meeting_open_issues")', 'contenteditable' => 'true', 'ng-keyup' => 'keyup($event)', 'ng-keydown' => 'keydown($event)', 'ng-blur' => 'blur($event)', 'ng-focus' => 'focus($event)', 'data-id' => '{{ item.id }}' }
             {{ item.description }}
+
+.sticky-footer
+  .pull-left
+    %a.btn
+      %i.fa.fa-cogs
+  .pull-right
+    %a.btn
+      %i.fa.fa-link
+  %a.btn.btn-large
+    %i.fa.fa-envelope-o
+    Send Summary via Email
+  %a.btn.btn-large
+    %i.fa.fa-file-text-o
+    Download PDF Report

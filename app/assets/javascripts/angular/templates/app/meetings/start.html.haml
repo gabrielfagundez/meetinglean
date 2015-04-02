@@ -66,6 +66,12 @@
           Add new open issue
 
 .sticky-footer
-  %a.btn.btn-start-meeting{ 'ng-click' => 'endMeeting()' }
+  .pull-left
+    %a.btn
+      %i.fa.fa-cogs
+  .pull-right
+    %a.btn
+      %i.fa.fa-link
+  %a.btn.btn-large{ 'ng-click' => 'endMeeting()' }
     %i.fa.fa-play
     End Meeting
