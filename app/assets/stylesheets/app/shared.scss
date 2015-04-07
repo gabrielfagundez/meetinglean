@@ -46,6 +46,17 @@ html {
         padding: 5px;
         text-align: center;
       }
+      .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 110px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #cccccc;
+        width: calc(100% - 110px);
+        padding: 5px;
+        text-align: center;
+        z-index: 1001;
+      }
     }
   }
 }
