@@ -1,7 +1,7 @@
 #meetings-index
   .sticky-header.meetings-nav
     .new-meeting
-      %i.fa.fa-plus-square-o{ 'ng-click' => 'newMeeting()' }
+      %i.fa.fa-plus-square-o{ 'ng-click' => 'newMeeting()', 'tooltip' => true, 'data-placement' => 'bottom', 'title' => 'Add new meeting' }
   %section.content
     .timeline-day
       .dayhead
