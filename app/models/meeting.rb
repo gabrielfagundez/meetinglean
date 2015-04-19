@@ -7,6 +7,8 @@ class Meeting < ActiveRecord::Base
   has_many :meeting_open_issues
   has_many :meeting_action_items
 
+  belongs_to :user
+
   def full_json_data
     start_time = self.start_time.strftime('%A, %B %-d, %Y - %H:%M') if start_time.present?
     {
