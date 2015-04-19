@@ -22,15 +22,10 @@
     }
     .user-image {
       position: absolute;
-      left: 45%;
+      left: calc(50% - 32px);
       bottom: -10%;
       z-index: 999;
       width: 10%;
-      img {
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
-      }
     }
     .menu {
       text-align: center;
@@ -133,6 +128,14 @@
       i {
         font-size: 40px;
       }
+    }
+  }
+  .timeline-day {
+    .meeting {
+      .mini-meeting {
+
+      }
+    ;
     }
   }
 }
