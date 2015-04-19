@@ -1,15 +1,111 @@
-/*
- * Main
- *= require 'bootstrap/dist/css/bootstrap'
- *= require 'ionicons/css/ionicons'
- *= require 'font-awesome/css/font-awesome'
- *= require 'common/bootstrap_overrides'
+/*------------------------------------*\
+    #MAIN
+\*------------------------------------*/
+
+/**
+ * CONTENTS
  *
- *= require 'app/login'
- *= require 'app/shared'
- *= require 'app/meetings'
+ * SETTINGS
+ * Global...............Globally-available variables and settings/config.
+ * Colors...............Manage our color palette in isolation.
  *
- *= require 'adminLTE/skins/_all-skins'
- *= require 'adminLTE/AdminLTE'
+ * TOOLS
+ * Functions............Some simple helper functions.
+ * Mixins...............Globally available mixins.
+ * Aliases..............Some shorter aliases onto longer variables.
  *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ * Reset................A pared back reset to remove margins.
+ * Shared...............Sensibly and tersely share global commonalities.
+ *
+ * ELEMENTS
+ * Page.................Page-level styles (HTML element).
+ * Headings.............Heading styles.
+ * Links................Hyperlink styles.
+ * Lists................Default list styles.
+ * Images...............Base image styles.
+ * Quotes...............Styling for blockquotes, etc.
+ *
+ * OBJECTS
+ * Wrappers.............Wrappers and page constraints.
+ * Layout...............Generic layout module.
+ * Headline.............Simple object for structuring heading pairs.
+ * Media................The media object.
+ * List-inline..........Simple abstraction for setting lists out in a line.
+ *
+ * COMPONENTS
+ * Page-head............Page header styles.
+ * Page-foot............Page footer styles.
+ * Logo.................Make our logo a reusable component.
+ * Nav primary..........The site’s main nav.
+ * Nav secondary........Secondary nav styles.
+ * Masthead.............Site’s main masthead.
+ * Panel................Simple panelled boxout.
+ * Score................Score lozenge for place ratings.
+ * Buttons..............Button styles.
+ * Avatar...............General avatar styles.
+ * Testimonial..........Quote styles.
+ * Headline.............Basic heading style for generic headlines.
+ * Promo................Promotional box styling.
+ *
+ * SCOPES
+ * Prose................Set up a new styling context for long-format text.
+ *
+ * TRUMPS
+ * Headings.............Assigning our heading styles to helper classes.
+ * Widths...............Simple width helper classes.
  */
+
+
+/**
+  Third Party Libraries
+*/
+@import 'bootstrap/dist/css/bootstrap';
+@import 'ionicons/css/ionicons';
+@import 'font-awesome/css/font-awesome';
+@import 'common/bootstrap_overrides';
+@import 'adminLTE/skins/_all-skins';
+@import 'adminLTE/AdminLTE';
+
+@import 'app/login';
+@import 'app/shared';
+@import 'app/meetings';
+
+
+/**
+  ITCSS Architectured
+*/
+@import 'application/settings/settings.global';
+@import 'application/settings/settings.colors';
+
+@import 'application/tools/tools.functions';
+@import 'application/tools/tools.mixins';
+@import 'application/tools/tools.typography';
+@import 'application/tools/tools.aliases';
+
+@import 'application/generic/generic.normalize';
+@import 'application/generic/generic.box-sizing';
+@import 'application/generic/generic.reset';
+@import 'application/generic/generic.shared';
+
+@import 'application/elements/elements.page';
+@import 'application/elements/elements.headings';
+@import 'application/elements/elements.links';
+@import 'application/elements/elements.lists';
+@import 'application/elements/elements.images';
+@import 'application/elements/elements.quotes';
+
+@import 'application/objects/objects.wrappers';
+@import 'application/objects/objects.layout';
+@import 'application/objects/objects.headline';
+@import 'application/objects/objects.media';
+@import 'application/objects/objects.list-inline';
+
+@import 'application/components/components.nav-primary';
+
+@import 'application/scope/scope.prose';
+
+@import 'application/trumps/trumps.headings';
+@import 'application/trumps/trumps.widths';
