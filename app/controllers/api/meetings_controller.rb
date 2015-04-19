@@ -1,7 +1,13 @@
 class Api::MeetingsController < ApplicationController
 
   def index
-    render json: Meeting.order('start_time DESC').all
+    if params[:date].blank?
+      start_time  = DateTime.now.beginning_of_day
+      end_time    = DateTime.now.end_of_day
+      render json: current_user.meetings.where('start_time > ?', start_time).where('start_time < ?', end_time).order('start_time DESC').all
+    else
+
+    end
   end
 
   def show
@@ -14,7 +20,7 @@ class Api::MeetingsController < ApplicationController
   end
 
   def create
-    render json: Meeting.create(name: 'Meeting Name', start_time: DateTime.now).full_json_data
+    render json: Meeting.create(name: 'Meeting Name', start_time: DateTime.now, user_id: current_user.id).full_json_data
   end
 
   def update
