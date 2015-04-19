@@ -1,0 +1,49 @@
+<div id="meetings-index">
+  <div class="sticky-header meetings-nav">
+    <div class="new-meeting">
+      <i class="fa fa-plus-square-o" ng-click="newMeeting()" tooltip data-placement="bottom" title="Add new meeting"></i>
+    </div>
+  </div>
+
+  <section class="content">
+
+
+
+
+    <div class="c-timeline">
+      <div class="c-timeline-day">
+        <div class="c-timeline-day__dayhead">
+          Friday, April 3, 2015
+        </div>
+
+        <div class="events" ng-repeat="meeting in meetings">
+          <div class="c-timeline-day__meeting" ng-class-odd="'c-timeline-day__meeting--left'" ng-class-even="'c-timeline-day__meeting--right'">
+            <div class="c-timeline-day__meeting__time">2:30 PM</div>
+
+            <a class="c-timeline-day__meeting__content" ng-href= '{{ meetingPath(meeting.id) }}'>
+              <div class="c-timeline-day__meeting__content__main">
+                <span class="c-timeline-day__meeting__content__main__arrow"></span>
+                <span class="c-timeline-day__meeting__content__main__title">
+                  {{ meeting.name }}
+                </span>
+              </div>
+
+              <div class="c-timeline-day__meeting__content__more">
+                <div class="c-timeline-day__meeting__content__more__detail">
+                  <div class="c-timeline-day__meeting__content__more__detail__info">Members</div>
+                  <div class="c-timeline-day__meeting__content__more__detail__value">No Members Added</div>
+                </div>
+                <div class="c-timeline-day__meeting__content__more__detail">
+                  <div class="c-timeline-day__meeting__content__more__detail__info">Location</div>
+                  <div class="c-timeline-day__meeting__content__more__detail__value">No Location Set</div>
+                </div>
+              </div>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>

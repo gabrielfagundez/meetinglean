@@ -1,0 +1,115 @@
+$timeline-default-border-radius: 7px;
+$timeline-default-text-color: #999999;
+
+.c-timeline {
+  padding: 120px;
+  background: image-url("meetings/lineLight.png") repeat-y center top;
+}
+
+  .c-timeline-day__dayhead {
+    color: #dbdee0;
+    font-size: 28px;
+    background-color: #fff;
+    border-radius: $timeline-default-border-radius;
+    border: 2px solid #d0d1d2;
+    width: 66%;
+    margin-left: 16%;
+    text-align: center;
+    padding: 20px 10px;
+    margin-bottom: 40px;
+  }
+
+  .c-timeline-day__meeting {
+    position: relative;
+    margin-bottom: 120px;
+    background: image-url("meetings/dot_my_meetings.png") no-repeat center 16px;
+  }
+
+    .c-timeline-day__meeting__time {
+      position: absolute;
+      padding: 0 20px;
+      top: 16px;
+      font-size: 18px;
+      color: $timeline-default-text-color;
+
+      .c-timeline-day__meeting--left & {
+        left: 50%;
+      }
+
+      .c-timeline-day__meeting--right & {
+        right: 50%;
+      }
+    }
+
+    .c-timeline-day__meeting__content {
+      position: relative;
+      display: block;
+      .c-timeline-day__meeting--left & {
+        margin-right: 55%;
+      }
+      .c-timeline-day__meeting--right & {
+        margin-left: 55%;
+      }
+    }
+
+      .c-timeline-day__meeting__content__main {
+        padding: 10px;
+        min-height: 60px;
+        border-radius: $timeline-default-border-radius;
+        border: solid 1px $timeline-default-text-color;
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+        .c-timeline-day__meeting__content__main__title {
+          font-size: 20px;
+          word-wrap: break-word;
+        }
+        .c-timeline-day__meeting__content__main__arrow {
+          display: block;
+          position: absolute;
+          top: 20px;
+          width: 15px;
+          height: 15px;
+          background-color: #fff;
+          transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          .c-timeline-day__meeting--left & {
+            border-top: solid 1px $timeline-default-text-color;
+            border-right: solid 1px $timeline-default-text-color;
+            left: 100%;
+            margin-left: -$timeline-default-border-radius;
+          }
+          .c-timeline-day__meeting--right & {
+            border-bottom: solid 1px $timeline-default-text-color;
+            border-left: solid 1px $timeline-default-text-color;
+            left: -8px;
+          }
+        }
+
+      .c-timeline-day__meeting__content__more {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        cursor: pointer;
+      }
+
+      .c-timeline-day__meeting__content__more__detail {
+        margin-top: -10px;
+        padding: 10px;
+        z-index: 1000;
+        cursor: pointer;
+        border-bottom-right-radius: $timeline-default-border-radius;
+        border-bottom-left-radius: $timeline-default-border-radius;
+        border: solid 1px $timeline-default-text-color;
+        border-top: none;
+        background-color: #fafafa;
+      }
+        .c-timeline-day__meeting__content__more__detail__info {
+          color: #1d1d1d;
+          padding-bottom: 5px;
+        }
+        .c-timeline-day__meeting__content__more__detail__value {
+          color: $timeline-default-text-color;
+        }
