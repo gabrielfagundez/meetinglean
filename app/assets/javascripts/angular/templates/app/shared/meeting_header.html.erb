@@ -1,40 +1,34 @@
-<div class="meeting-header">
-  <div class="title" contenteditable="true" ng-blur="handleTitleBlur()" ng-keydown="handleTitleKeydown($event)">
+<div class="c-upper-header">
+  <div class="c-upper-header__title" contenteditable="true" ng-blur="handleTitleBlur()" ng-keydown="handleTitleKeydown($event)">
     {{ currentMeeting().name }}
   </div>
-  <div class="meeting-description">
-    Meeting Description
-  </div>
-  <div class="user-image">
+  <div class="c-upper-header__user-image">
     <%= image_tag 'user-image.jpg', class: 'c-avatar' %>
   </div>
-  <div class="menu">
-    <div class="content">
-      <div class="row">
-        <div class="menu-left col-lg-2 col-lg-offset-3">
-          <div class="menu-title">
-            Agenda Items
-          </div>
-          <div class="value">
-            1
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="menu-title">
-            Members
-          </div>
-          <div class="value">
-            4
-          </div>
-        </div>
-        <div class="menu-right col-lg-2">
-          <div class="menu-title">
-            Start Time
-          </div>
-          <div class="value">
-            12/01/2015 - 12:00
-          </div>
-        </div>
+  
+  <div class="c-upper-header__menu">
+    <div class="c-upper-header__menu__item">
+      <div class="c-upper-header__menu__item__title">
+        Agenda Items
+      </div>
+      <div class="c-upper-header__menu__item__value">
+        1
+      </div>
+    </div>
+    <div class="c-upper-header__menu__item">
+      <div class="c-upper-header__menu__item__title">
+        Members
+      </div>
+      <div class="c-upper-header__menu__item__value">
+        4
+      </div>
+    </div>
+    <div class="c-upper-header__menu__item">
+      <div class="c-upper-header__menu__item__title">
+        Start Time
+      </div>
+      <div class="c-upper-header__menu__item__value">
+        12/01/2015 - 12:00
       </div>
     </div>
   </div>
