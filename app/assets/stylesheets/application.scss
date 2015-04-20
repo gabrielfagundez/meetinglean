@@ -36,19 +36,8 @@
  * List-inline..........Simple abstraction for setting lists out in a line.
  *
  * COMPONENTS
- * Page-head............Page header styles.
- * Page-foot............Page footer styles.
- * Logo.................Make our logo a reusable component.
- * Nav primary..........The site’s main nav.
- * Nav secondary........Secondary nav styles.
- * Masthead.............Site’s main masthead.
- * Panel................Simple panelled boxout.
- * Score................Score lozenge for place ratings.
- * Buttons..............Button styles.
+ * Timeline.............General timeline styles.
  * Avatar...............General avatar styles.
- * Testimonial..........Quote styles.
- * Headline.............Basic heading style for generic headlines.
- * Promo................Promotional box styling.
  *
  * SCOPES
  * Prose................Set up a new styling context for long-format text.
@@ -103,6 +92,7 @@
 @import 'application/objects/objects.media';
 @import 'application/objects/objects.list-inline';
 
+@import 'application/components/components.nav-primary';
 @import 'application/components/components.timeline';
 @import 'application/components/components.avatar';
 
