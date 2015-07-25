@@ -1,0 +1,13 @@
+.c-terms.c-main-full-height{ 'ng-controller' => 'ConditionsController' }
+  .c-main-full-height__content
+    .c-terms__header
+      .c-terms__header__left
+        %a.c-terms__logo{ 'ng-href' => '{{ RoutesHelper.landing_path() }}' }
+          YoYoBlox
+      .c-terms__header__right{ 'ng-if' => 'displaySignOut' }
+        %sign-out-link
+
+    .c-terms__content
+      %ng-include{ src: 'content' }
+  .c-terms__footer
+    %ng-include{ 'src' => 'TemplatesHelper.footerTemplatePath()' }

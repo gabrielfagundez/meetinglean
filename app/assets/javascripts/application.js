@@ -20,10 +20,7 @@
 // Angular App
 //= require angular/app
 //= require angular/routes
-//= require_tree ./angular/modules
-//= require_tree ./angular/filters
-//= require_tree ./angular/directives
+//= require_tree ./angular/components
+//= require_tree ./angular/helpers
 //= require_tree ./angular/models
-//= require_tree ./angular/services
-//= require_tree ./angular/controllers
-//= require_tree ./angular/templates
+//= require_tree ./angular/shared

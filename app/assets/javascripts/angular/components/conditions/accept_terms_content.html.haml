@@ -1,0 +1,8 @@
+.c-terms-form
+  .c-terms-form__title
+    Please, read and agree with the following terms and conditions to continue
+  .c-terms-form__content
+    %ng-include{ 'src' => 'TemplatesHelper.termsContentTemplatePath()' }
+  .c-terms-form__actions
+    %button.c-button.c-button--primary.c-button--small{ type: 'submit', 'ng-click' => 'acceptTerms()'}
+      Accept

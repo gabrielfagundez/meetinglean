@@ -1,0 +1,12 @@
+app.factory('TemplatesHelper', [function() {
+  var service = {
+    toastTemplatePath: function(){
+        return  <%= "'#{ asset_path('angular/shared/toast/toast.html') }'" %>
+    },
+    navbarTemplatePath: function(){
+        return  <%= "'#{ asset_path('angular/shared/navbar/navbar.html') }'" %>
+    }
+  };
+
+  return service;
+}]);
