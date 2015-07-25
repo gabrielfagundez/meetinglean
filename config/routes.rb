@@ -5,6 +5,10 @@ Meetlean::Application.routes.draw do
 
   namespace :app do
     root to: 'home#index'
+
+    resources :clients, only: :index
+    resources :projects, only: :index
+    resources :workers, only: :index
   end
 
 end
