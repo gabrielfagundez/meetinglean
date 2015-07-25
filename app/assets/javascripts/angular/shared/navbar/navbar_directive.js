@@ -1,5 +1,8 @@
 app.directive('navbar', ['TemplatesHelper', function (TemplatesHelper) {
   return {
-    templateUrl: TemplatesHelper.navbarTemplatePath()
+    templateUrl: TemplatesHelper.navbarTemplatePath(),
+    scope: {
+      active: '@'
+    }
   }
 }]);

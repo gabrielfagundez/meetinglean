@@ -12,12 +12,24 @@
   }
 
   .c-nav-primary__body {
-    padding: 20px 40px;
     color: #666;
   }
 
     .c-nav-primary__body__item {
-      padding: 20px 0;
+      padding: 20px 40px;
+      display: block;
+      border-bottom: 1px solid #eee;
+      font-weight: normal;
+
+      &:hover {
+        text-decoration: none;
+        background-color: #fefefe;
+      }
+
+      &.is-active {
+        background-color: #f7f7f7;
+        border-left: 3px solid #999999;
+      }
     }
 
       .c-nav-primary__body__item__text {

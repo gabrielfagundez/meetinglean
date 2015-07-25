@@ -15,6 +15,6 @@
 
 
   %body#page-top.index.skin-yellow{ 'ng-app' => 'meetinglean', 'ng-controller' => 'MainController' }
-    %navbar
+    %navbar{ active: controller_name }
     .c-content
       = yield
