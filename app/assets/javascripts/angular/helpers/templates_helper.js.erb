@@ -3,14 +3,17 @@ app.factory('TemplatesHelper', [function() {
     toastTemplatePath: function(){
         return  <%= "'#{ asset_path('angular/shared/toast/toast.html') }'" %>
     },
-    navbarTemplatePath: function(){
-        return  <%= "'#{ asset_path('angular/shared/navbar/navbar.html') }'" %>
+    pageNavTemplatePath: function(){
+        return  <%= "'#{ asset_path('angular/shared/pageNav/pageNav.html') }'" %>
     },
     upHeaderTemplatePath: function(){
         return  <%= "'#{ asset_path('angular/shared/upHeader/upHeader.html') }'" %>
     },
     cardTemplatePath: function(){
         return  <%= "'#{ asset_path('angular/shared/card/card.html') }'" %>
+    },
+    pageFooterTemplatePath: function(){
+        return  <%= "'#{ asset_path('angular/shared/pageFooter/pageFooter.html') }'" %>
     }
   };
 

@@ -12,10 +12,9 @@
 </head>
 
 <body class="index skin-yellow" id="page-top" ng-app="meetinglean" ng-controller="MainController">
-  <navbar active="<%= controller_name %>"></navbar>
-  <div class="c-content">
-    <%= yield %>
-  </div>
+  <page-nav active="<%= controller_name %>"></page-nav>
+  <%= yield %>
+  <page-footer></page-footer>
 </body>
 
 </html>
