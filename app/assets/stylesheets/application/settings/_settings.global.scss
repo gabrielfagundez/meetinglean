@@ -6,3 +6,14 @@ $base-radius:       3px;
 $base-transition:   0.333333333s;
 
 $base-spacing-unit: $base-line-height;
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
