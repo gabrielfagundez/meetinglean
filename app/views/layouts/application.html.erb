@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>MeetingLean</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+  <base href="/"></base>
+  <% # Google Font %>
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css"></link>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="index skin-yellow" id="page-top" ng-app="meetinglean" ng-controller="MainController">
+  <navbar active="<%= controller_name %>"></navbar>
+  <div class="c-content">
+    <%= yield %>
+  </div>
+</body>
+
+</html>
