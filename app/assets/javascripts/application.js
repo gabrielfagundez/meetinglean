@@ -7,12 +7,7 @@
 //= require angular-resource/angular-resource
 //= require bootstrap/dist/js/bootstrap
 //= require underscore/underscore
-
-// Landing
-//= require agency/agency
-//= require agency/cbpAnimatedHeader
-//= require agency/classie
-//= require agency/jqBootstrapValidation
+//= require materialize/bin/materialize
 
 // App
 //= require adminLTE/app
