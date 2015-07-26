@@ -7,4 +7,36 @@
   background-color: #fff;
   border-radius: 3px;
   margin: 20px;
+  padding: 20px;
 }
+
+  .c-card--table {
+    display: table;
+  }
+
+  .c-card__icon {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .c-card__description {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .c-card__content {
+    color: #cccccc;
+  }
+
+  .c-card__content--table {
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+      color: #aaaaaa;
+    }
+  }
+

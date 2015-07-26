@@ -1,1 +1,10 @@
-.c-card
+.c-card.c-card--table{ 'ng-if' => 'isEmpty' }
+  .c-card__content.c-card__content--table
+    .c-card__icon
+      %i.fa.fa-plus
+    .c-card__description
+      Please, click here to add a new {{ instance }}
+
+.c-card{ 'ng-if' => 'isStandard' }
+  .c-card__content
+

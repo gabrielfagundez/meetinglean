@@ -1,0 +1,21 @@
+<div ng-controller="ClientsController">
+  <up-header title="Clients"></up-header>
+
+  <!-- When the page is loading -->
+  <div ng-show="!displayScreen" class="u-text-center">
+    <%= image_tag 'configuration.png', class: 'u-spin' %>
+  </div>
+
+  <!-- When the page is loaded -->
+  <div ng-show="displayScreen">
+
+    <div ng-show="clients.length == 0">
+      <card type="empty" instance="Client"></card>
+    </div>
+
+    <div ng-show="clients.length > 0">
+
+    </div>
+
+  </div>
+</div>
