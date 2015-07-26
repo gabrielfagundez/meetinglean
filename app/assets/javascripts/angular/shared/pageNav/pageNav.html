@@ -1,33 +1,12 @@
-<div class="c-nav-primary">
-
-  <div class="c-nav-primary__header"></div>
-  <div class="c-nav-primary__body">
-
-    <a href="/app" class="c-nav-primary__body__item" ng-class="{ 'is-active': active == 'home' }">
-      <i class="fa fa-bar-chart"></i>
-      <p class="c-nav-primary__body__item__text">Dashboard</p>
-    </a>
-
-    <a href="/app/clients" class="c-nav-primary__body__item" ng-class="{ 'is-active': active == 'clients' }">
-      <i class="fa fa-institution"></i>
-      <p class="c-nav-primary__body__item__text">Clients</p>
-    </a>
-
-    <a href="/app/projects" class="c-nav-primary__body__item" ng-class="{ 'is-active': active == 'projects' }">
-      <i class="fa fa-book"></i>
-      <p class="c-nav-primary__body__item__text">Projects</p>
-    </a>
-
-    <a href="/app/workers" class="c-nav-primary__body__item" ng-class="{ 'is-active': active == 'workers' }">
-      <i class="fa fa-users"></i>
-      <p class="c-nav-primary__body__item__text">People</p>
-    </a>
-
-    <a href="/app/stats" class="c-nav-primary__body__item" ng-class="{ 'is-active': active == 'stats' }">
-      <i class="fa fa-pie-chart"></i>
-      <p class="c-nav-primary__body__item__text">Stats</p>
-    </a>
-
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/app" ng-class="{ 'is-active': active == 'home' }"><i class="fa fa-bar-chart"></i></a></li>
+      <li><a href="/app/clients" ng-class="{ 'is-active': active == 'clients' }"><i class="fa fa-institution"></i></a></li>
+      <li><a href="/app/projects" ng-class="{ 'is-active': active == 'projects' }"><i class="fa fa-book"></i></a></li>
+      <li><a href="/app/workers" ng-class="{ 'is-active': active == 'workers' }"><i class="fa fa-users"></i></a></li>
+      <li><a href="/app/stats" ng-class="{ 'is-active': active == 'stats' }"><i class="fa fa-pie-chart"></i></a></li>
+    </ul>
   </div>
-
-</div>
+</nav>
