@@ -8,13 +8,10 @@
   <!-- When the page is loaded -->
   <div ng-show="displayScreen">
 
-    <div ng-show="clients.length == 0">
-      <card type="empty" instance="Client"></card>
+    <div ng-repeat="client in clients">
+      <card></card>
     </div>
 
-    <div ng-show="clients.length > 0">
-
-    </div>
-
+    <card type="empty" instance="Client" link="/clients/new"></card>
   </div>
 </div>
