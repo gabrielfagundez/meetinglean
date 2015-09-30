@@ -11,12 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body class="index skin-yellow" id="page-top" ng-app="meetinglean" ng-controller="MainController">
-  <page-nav active="<%= controller_name %>"></page-nav>
+<body ng-app="meetinglean" ng-controller="MainController">
   <main>
     <%= yield %>
   </main>
-  <page-footer></page-footer>
 </body>
 
 </html>
