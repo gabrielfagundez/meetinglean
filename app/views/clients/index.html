@@ -7,4 +7,17 @@
     <i class="fa fa-chevron-down"></i>
   </div>
 
+  <% if @clients.blank? %>
+    <div class="c-empty-entity">
+      <div class="c-empty-entity__icon">
+        :(
+      </div>
+      <div class="c-empty-entity__text">
+        You don't have any client. Try <a href="">adding a new client</a>.
+      </div>
+    </div>
+  <% else %>
+
+  <% end %>
+
 </div>
