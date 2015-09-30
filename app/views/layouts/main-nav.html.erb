@@ -1,7 +1,7 @@
 <div class="c-nav-primary">
   <div class="c-nav-primary__logo"></div>
 
-  <div class="c-nav-primary__item is-active">
+  <a href="<%= root_path %>" class="c-nav-primary__item <%= 'is-active' if controller_name == 'home' %>">
     <div class="c-nav-primary__item__icon">
       <i class="fa fa-dashboard"></i>
     </div><div class="c-nav-primary__item__text">
@@ -9,8 +9,8 @@
     </div><div class="c-nav-primary__item__action">
       <i class="fa fa-chevron-right"></i>
     </div>
-  </div>
-  <div class="c-nav-primary__item">
+  </a>
+  <a href="<%= clients_path %>" class="c-nav-primary__item <%= 'is-active' if controller_name == 'clients' %>">
     <div class="c-nav-primary__item__icon">
       <i class="fa fa-dashboard"></i>
     </div><div class="c-nav-primary__item__text">
@@ -18,8 +18,8 @@
     </div><div class="c-nav-primary__item__action">
       <i class="fa fa-chevron-right"></i>
     </div>
-  </div>
-  <div class="c-nav-primary__item">
+  </a>
+  <a href="<%= projects_path %>" class="c-nav-primary__item <%= 'is-active' if controller_name == 'projects' %>">
     <div class="c-nav-primary__item__icon">
       <i class="fa fa-dashboard"></i>
     </div><div class="c-nav-primary__item__text">
@@ -27,8 +27,8 @@
     </div><div class="c-nav-primary__item__action">
       <i class="fa fa-chevron-right"></i>
     </div>
-  </div>
-  <div class="c-nav-primary__item">
+  </a>
+  <a href="<%= workers_path %>" class="c-nav-primary__item <%= 'is-active' if controller_name == 'workers' %>">
     <div class="c-nav-primary__item__icon">
       <i class="fa fa-dashboard"></i>
     </div><div class="c-nav-primary__item__text">
@@ -36,5 +36,5 @@
     </div><div class="c-nav-primary__item__action">
       <i class="fa fa-chevron-right"></i>
     </div>
-  </div>
+  </a>
 </div>
