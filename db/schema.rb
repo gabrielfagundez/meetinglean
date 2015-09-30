@@ -22,67 +22,11 @@ ActiveRecord::Schema.define(version: 20150930232614) do
     t.datetime "updated_at"
   end
 
-  create_table "meeting_action_items", force: true do |t|
-    t.string   "description"
-    t.string   "meeting_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "meeting_agendas", force: true do |t|
-    t.string   "description"
-    t.string   "meeting_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "meeting_decisions", force: true do |t|
-    t.string   "description"
-    t.string   "meeting_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "meeting_open_issues", force: true do |t|
-    t.string   "description"
-    t.string   "meeting_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "meeting_private_notes", force: true do |t|
-    t.string   "description"
-    t.string   "meeting_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "meeting_summaries", force: true do |t|
-    t.string   "description"
-    t.string   "meeting_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "meetings", force: true do |t|
-    t.string   "name"
-    t.boolean  "started",    default: false, null: false
-    t.boolean  "finished",   default: false, null: false
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "user_id"
-  end
-
-  create_table "people", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "projects", force: true do |t|
     t.string   "name"
+    t.string   "mision"
+    t.string   "vision"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
