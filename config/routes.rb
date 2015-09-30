@@ -5,5 +5,6 @@ Meetlean::Application.routes.draw do
 
   resources :projects
   resources :clients
+  resources :workers
 
 end
