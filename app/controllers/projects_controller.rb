@@ -4,4 +4,8 @@ class ProjectsController < ApplicationController
     @projects = []
   end
 
+  def show
+    @project = Project.first
+  end
+
 end

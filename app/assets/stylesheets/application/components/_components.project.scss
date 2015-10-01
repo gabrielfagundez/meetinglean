@@ -1,0 +1,31 @@
+.c-project {
+  width: 100%;
+  height: 120px;
+  background-color: #dddddd;
+}
+
+  .c-project__logo {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #aaaaaa;
+    display: inline-block;
+  }
+
+  .c-project__id {
+    width: calc(100% - 120px);
+    height: 120px;
+    float: right;
+    display: inline-block;
+    padding: 10px;
+  }
+
+    .c-project__name {
+      font-size: 30px;
+    }
+
+    .c-project__vision {
+      width: 100%;
+      font-size: 14px;
+      font-style: italic;
+    }
